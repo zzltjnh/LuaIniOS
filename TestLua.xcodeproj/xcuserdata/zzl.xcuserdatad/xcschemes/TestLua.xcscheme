@@ -38,6 +38,16 @@
                ReferencedContainer = "container:TestLua.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "16758FA61920615F0050C86F"
+               BuildableName = "luaTests.xctest"
+               BlueprintName = "luaTests"
+               ReferencedContainer = "container:TestLua.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
