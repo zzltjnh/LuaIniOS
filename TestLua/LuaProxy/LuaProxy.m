@@ -53,10 +53,12 @@
     strncpy(strLuaEngine, (char*)tmp1, strlen(tmp1));
     NSLog(@"strLuaEngine %s \n",strLuaEngine);
     int s1 = luaL_loadfile(mainState, strLuaEngine);
+    
+    //loadfile仅仅视编译lua文件，并不执行这个文件，也就是说只是在栈上形成了一个匿名函数。只有执行这个函数一次，才会使得printmsg可以通过lua_getglobal获取，否则，全局变量是空的
     s1 = lua_pcall(mainState, 0, 0, 0);
     
-    lua_getglobal(mainState, "printmsg");
-    lua_pcall(mainState, 0, 0, 0);
+    lua_getglobal(mainState, "printmsg");//得到名字为printmsg的函数
+    lua_pcall(mainState, 0, 0, 0);//执行printmsg函数
 }
 
 - (void)dealloc {
